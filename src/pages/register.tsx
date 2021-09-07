@@ -13,7 +13,7 @@ import { useRouter } from "next/router"
 interface registerProps {}
 
 const Register: React.FC<registerProps> = ({}) => {
-    const router = useRouter()
+    const router = useRouter();
     const [,register] = useRegisterMutation();
     return (
         <Wrapper variant="small">
@@ -24,8 +24,8 @@ const Register: React.FC<registerProps> = ({}) => {
                     if (response.data?.register.errors) {
                         setErrors(toErrorMap(response.data.register.errors))
                     } else if (response.data?.register.user) {
-                        // if register worked
-                        router.push("/")
+                        // worked
+                        router.push("/");
                     }
                 }}
             >
