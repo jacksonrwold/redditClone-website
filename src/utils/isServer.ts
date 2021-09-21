@@ -1,2 +1,2 @@
 // @ts-ignore
-export const isServer = () => typeof window === "undefinded";
+export const isServer = () => typeof window === "undefined";
