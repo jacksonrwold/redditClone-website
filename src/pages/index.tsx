@@ -52,15 +52,23 @@ const Index = () => {
                 <Text>posted by {p.creator.username}</Text>
                 <Flex>
                   <Text mt={4}>{p.textSnippet}</Text>
-                  <IconButton 
-                    ml="auto" 
-                    variantColor="red" 
-                    icon="delete" 
-                    aria-label="Delete Post"
-                    onClick={() => {
-                      deletePost({id: p.id})
-                    }}>
-                  </IconButton>
+                  <Box ml="auto">
+                    <NextLink href="/post/edit/[id]" as={`/post/edit/${p.id}`}>
+                      <IconButton 
+                        as={Link}
+                        mr={4}
+                        icon="edit" 
+                        aria-label="Edit Post"
+                      />
+                    </NextLink>
+                    <IconButton 
+                      icon="delete" 
+                      aria-label="Delete Post"
+                      onClick={() => {
+                        deletePost({id: p.id})
+                      }}
+                    />
+                  </Box>
                 </Flex>
               </Box>
             </Flex>
